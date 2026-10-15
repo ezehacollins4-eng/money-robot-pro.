@@ -1,0 +1,18 @@
+{
+  "name": "Money Robot Pro \u2014 Work & Income Dashboard",
+  "short_name": "Money Robot",
+  "description": "A personal job search, proposal, application and income command center.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#101827",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

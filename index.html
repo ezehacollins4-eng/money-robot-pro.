@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="Money Robot — your personal job search, proposal, task and income command center.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Money Robot | Work smarter</title>
+<style>
+:root{--bg:#0b1220;--panel:#121c2e;--panel2:#172338;--line:#26354d;--text:#f4f7fb;--muted:#a2b0c5;--mint:#5de0b5;--blue:#7aa7ff;--gold:#f5c76b;--red:#ff8585;--radius:18px;--shadow:0 18px 48px #0003}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top right,#172944 0,transparent 38%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit}.app{max-width:1440px;margin:auto;min-height:100vh}.topbar{display:flex;align-items:center;justify-content:space-between;padding:22px clamp(16px,4vw,42px);gap:16px;border-bottom:1px solid #ffffff10;position:sticky;top:0;z-index:5;background:#0b1220eF;backdrop-filter:blur(18px)}.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,var(--mint),#62a9ff);display:grid;place-items:center;color:#0b1220;font-size:23px;font-weight:900;box-shadow:0 7px 24px #5de0b533}.brand strong{display:block;font-size:18px;letter-spacing:-.4px}.brand small{color:var(--muted);font-size:12px}.top-actions{display:flex;align-items:center;gap:10px}.pill{border:1px solid var(--line);border-radius:99px;padding:7px 12px;color:var(--muted);font-size:12px;white-space:nowrap}.online-dot{display:inline-block;width:7px;height:7px;background:var(--mint);border-radius:50%;margin-right:6px}.layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:26px;padding:28px clamp(16px,4vw,42px)}.sidebar{align-self:start;position:sticky;top:98px;display:flex;flex-direction:column;gap:7px}.nav-label{font-size:10px;letter-spacing:1.5px;color:#71829d;font-weight:800;padding:12px 12px 6px}.nav{display:flex;align-items:center;gap:12px;text-align:left;border:0;background:transparent;color:var(--muted);padding:12px 13px;border-radius:12px;width:100%;transition:.18s}.nav:hover,.nav.active{background:#1b2a40;color:var(--text)}.nav.active{box-shadow:inset 3px 0 var(--mint)}.nav .ico{width:20px;text-align:center;font-size:17px}.side-note{margin-top:22px;padding:15px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#17283a,#111b2b)}.side-note b{font-size:13px}.side-note p{font-size:12px;color:var(--muted);margin:7px 0 0}.main{min-width:0}.view{display:none;animation:fade .2s ease}.view.active{display:block}@keyframes fade{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}.eyebrow{color:var(--mint);font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:24px}.page-head h1{font-size:clamp(27px,3vw,38px);letter-spacing:-1.4px;line-height:1.15;margin:7px 0}.page-head p{color:var(--muted);margin:0;max-width:650px}.btn{border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--panel2);color:var(--text);font-weight:700;transition:.18s}.btn:hover{transform:translateY(-1px);border-color:#49627f}.btn.primary{background:var(--mint);border-color:var(--mint);color:#07151a}.btn.blue{background:var(--blue);border-color:var(--blue);color:#0a1526}.btn.danger{color:var(--red)}.btn.small{font-size:12px;padding:7px 10px;border-radius:9px}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}.card{background:linear-gradient(145deg,#142036,#111a2a);border:1px solid var(--line);border-radius:var(--radius);padding:19px;box-shadow:var(--shadow);min-width:0}.stat-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;gap:8px}.stat-icon{width:32px;height:32px;border-radius:10px;background:#22334a;display:grid;place-items:center;font-size:16px}.stat-value{font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-.8px;margin:12px 0 3px;overflow-wrap:anywhere}.stat-sub{font-size:11px;color:var(--muted)}.mint{color:var(--mint)}.gold{color:var(--gold)}.blue-text{color:var(--blue)}.red-text{color:var(--red)}.dashboard-grid{grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr)}.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px}.section-title h2{font-size:16px;margin:0;letter-spacing:-.3px}.section-title span{font-size:12px;color:var(--muted)}.activity-list{display:flex;flex-direction:column;gap:10px}.activity{display:flex;align-items:center;gap:12px;padding:11px;border:1px solid #ffffff0b;background:#ffffff04;border-radius:13px}.activity-ico{width:38px;height:38px;border-radius:12px;background:#22334a;display:grid;place-items:center;flex-shrink:0}.activity div:nth-child(2){min-width:0;flex:1}.activity b{display:block;font-size:13px}.activity small{color:var(--muted);font-size:11px}.empty{padding:24px;text-align:center;color:var(--muted);border:1px dashed #35445c;border-radius:14px;font-size:13px}.progress{height:7px;border-radius:20px;background:#26354a;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--mint),#73b9ff);border-radius:20px}.callout{display:flex;gap:12px;padding:15px;border-radius:14px;background:#102d2c;border:1px solid #285b52;color:#c9f6e8;margin-top:16px;font-size:12px}.callout b{display:block;margin-bottom:3px}.callout.warning{background:#302717;border-color:#6a5126;color:#ffe7b1}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:6px;min-width:0}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#c0ccdd;font-weight:700}.field input,.field textarea,.field select{width:100%;background:#0c1524;border:1px solid #30415a;border-radius:11px;padding:11px 12px;color:var(--text);outline:none;min-width:0}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--mint);box-shadow:0 0 0 3px #5de0b51c}.field textarea{resize:vertical;min-height:100px}.field input::placeholder,.field textarea::placeholder{color:#66758c}.muted{color:var(--muted)}.smalltext{font-size:12px}.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{border:1px solid #33435b;background:#1a2a40;border-radius:99px;padding:6px 10px;font-size:11px;color:#d6e1f0}.chip.good{border-color:#2b6e5e;color:var(--mint)}.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}.toolbar .field{flex:1;min-width:160px}.toolbar input,.toolbar select{background:#0c1524;border:1px solid #30415a;color:var(--text);border-radius:10px;padding:10px}.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:16px}.result{border:1px solid var(--line);border-radius:15px;padding:16px;background:#0f1929;margin-top:12px}.result h3{font-size:15px;margin:0 0 6px}.result p{color:var(--muted);font-size:12px;margin:7px 0}.score{font-weight:800;color:var(--mint)}.result-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:13px}table{width:100%;border-collapse:collapse;min-width:600px}th,td{text-align:left;padding:12px 13px;border-bottom:1px solid #26354d;font-size:12px}th{background:#172338;color:#a9bad0;font-weight:700}td{color:#e3eaf4}tr:last-child td{border-bottom:0}.status{display:inline-block;border-radius:99px;padding:4px 8px;font-size:10px;background:#26364c;color:#d5e1f1}.status.sent{background:#173b35;color:#7df0c8}.status.interview{background:#3b3220;color:#ffdc8c}.status.rejected{background:#402629;color:#ff9e9e}.two-col{grid-template-columns:1fr 1fr}.quick-links{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.quick-link{display:block;text-decoration:none;padding:15px;border:1px solid var(--line);border-radius:14px;background:#101b2b;transition:.2s}.quick-link:hover{border-color:var(--mint);transform:translateY(-2px)}.quick-link b{display:block;font-size:13px;margin:8px 0 2px}.quick-link small{color:var(--muted);font-size:11px}.link-ico{font-size:22px}.bar-chart{height:160px;display:flex;align-items:end;gap:8px;padding:16px 4px 0;border-bottom:1px solid var(--line)}.bar-wrap{height:100%;display:flex;align-items:center;justify-content:end;flex-direction:column;gap:6px;flex:1;min-width:0}.bar{width:min(32px,80%);min-height:3px;background:linear-gradient(180deg,var(--mint),#2d887d);border-radius:7px 7px 2px 2px}.bar-wrap small{font-size:9px;color:var(--muted);white-space:nowrap}.bar-wrap span{font-size:9px;color:#b8c7d9}.task-list{display:flex;flex-direction:column;gap:8px}.task-row{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:12px;background:#0f1929}.task-row input[type=checkbox]{accent-color:var(--mint);width:17px;height:17px}.task-row .task-text{flex:1;min-width:0;font-size:13px}.task-row.done .task-text{text-decoration:line-through;color:#71819a}.task-row small{display:block;color:var(--muted);font-size:10px}.task-row button{background:transparent;border:0;color:#8a9bb2;font-size:18px}.footer{padding:20px clamp(16px,4vw,42px) 32px;color:#7c8da5;font-size:11px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.mobile-nav{display:none}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:20;background:#e6fff6;color:#09251e;padding:12px 17px;border-radius:12px;font-weight:800;font-size:13px;box-shadow:var(--shadow);transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}.badge{font-size:10px;border-radius:7px;padding:4px 7px;background:#203b38;color:var(--mint)}.hidden{display:none!important}
+@media(max-width:980px){.layout{grid-template-columns:1fr;gap:0;padding-top:18px}.sidebar{display:none}.mobile-nav{display:flex;gap:5px;overflow-x:auto;padding:0 16px 10px;position:sticky;top:85px;z-index:4;background:#0b1220f2}.mobile-nav .nav{white-space:nowrap;width:auto;padding:9px 12px;font-size:12px}.mobile-nav .nav .ico{width:auto}.mobile-nav .nav.active{box-shadow:inset 0 -2px var(--mint)}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-grid,.split{grid-template-columns:1fr}.topbar{padding:15px 16px}.pill{display:none}.quick-links{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.page-head{align-items:flex-start;flex-direction:column}.page-head>.btn{width:100%}.card{padding:15px}.stats{gap:10px}.stat-value{font-size:24px}.form-grid,.two-col{grid-template-columns:1fr}.field.full{grid-column:auto}.quick-links{grid-template-columns:1fr 1fr}.quick-link{padding:12px}.layout{padding-left:13px;padding-right:13px}.mobile-nav{top:74px}.brand strong{font-size:16px}.brand small{font-size:10px}.logo{width:38px;height:38px}.topbar{gap:8px}.top-actions .btn{padding:8px 10px;font-size:12px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="logo">M</div><div><strong>Money Robot <span style="color:var(--mint)">PRO</span></strong><small>Your personal work & income command center</small></div></div>
+  <div class="top-actions"><span class="pill"><span class="online-dot"></span>Saved on this device</span><button class="btn small" id="exportTop">↧ Backup</button></div>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+  <button class="nav active" data-view="dashboard"><span class="ico">⌂</span> Overview</button><button class="nav" data-view="opportunities"><span class="ico">⌕</span> Find work</button><button class="nav" data-view="proposal"><span class="ico">✦</span> Proposal AI</button><button class="nav" data-view="applications"><span class="ico">▤</span> Applications</button><button class="nav" data-view="tasks"><span class="ico">✓</span> Tasks</button><button class="nav" data-view="money"><span class="ico">₦</span> Money</button><button class="nav" data-view="profile"><span class="ico">⚙</span> Profile</button>
+</nav>
+<div class="layout">
+<aside class="sidebar">
+  <div class="nav-label">WORKSPACE</div>
+  <button class="nav active" data-view="dashboard"><span class="ico">⌂</span> Overview</button>
+  <button class="nav" data-view="opportunities"><span class="ico">⌕</span> Find opportunities</button>
+  <button class="nav" data-view="proposal"><span class="ico">✦</span> Proposal studio</button>
+  <button class="nav" data-view="applications"><span class="ico">▤</span> Application tracker</button>
+  <button class="nav" data-view="tasks"><span class="ico">✓</span> Task planner</button>
+  <div class="nav-label">FINANCES & SETTINGS</div>
+  <button class="nav" data-view="money"><span class="ico">₦</span> Income & expenses</button>
+  <button class="nav" data-view="profile"><span class="ico">⚙</span> My work profile</button>
+  <div class="side-note"><span class="badge">SMART WORKFLOW</span><p>Find opportunities, tailor your pitch, track follow-ups and understand your earnings in one place.</p></div>
+</aside>
+<main class="main">
+<section class="view active" id="view-dashboard">
+  <div class="page-head"><div><div class="eyebrow">YOUR COMMAND CENTER</div><h1 id="welcomeTitle">Let's build your income.</h1><p>Turn your skills into a repeatable job-search routine. Your progress and records stay on this device.</p></div><button class="btn primary" data-go="opportunities">＋ Find work</button></div>
+  <div class="grid stats">
+    <div class="card"><div class="stat-top">Applications tracked <span class="stat-icon">▤</span></div><div class="stat-value" id="statApps">0</div><div class="stat-sub">Keep every opportunity organized</div></div>
+    <div class="card"><div class="stat-top">Tasks completed <span class="stat-icon">✓</span></div><div class="stat-value" id="statTasks">0%</div><div class="stat-sub" id="taskSub">Start with one small action</div></div>
+    <div class="card"><div class="stat-top">Net recorded income <span class="stat-icon">₦</span></div><div class="stat-value mint" id="statNet">₦0</div><div class="stat-sub">Based on entries you record</div></div>
+    <div class="card"><div class="stat-top">Follow-ups due <span class="stat-icon">◷</span></div><div class="stat-value gold" id="statFollow">0</div><div class="stat-sub">Applications needing attention</div></div>
+  </div>
+  <div class="grid dashboard-grid">
+    <div class="card"><div class="section-title"><h2>Weekly action plan</h2><span id="weekCount">0 of 5 complete</span></div><div class="progress"><span id="weekProgress" style="width:0%"></span></div><div class="activity-list" style="margin-top:14px" id="dashboardTasks"></div><div style="margin-top:13px"><button class="btn small" data-go="tasks">Open task planner →</button></div></div>
+    <div class="card"><div class="section-title"><h2>Recent activity</h2><span>Latest updates</span></div><div id="recentActivity" class="activity-list"><div class="empty">Your activity will appear here as you use Money Robot.</div></div></div>
+  </div>
+  <div class="card" style="margin-top:16px"><div class="section-title"><h2>Quick access</h2><span>Trusted starting points</span></div><div class="quick-links">
+    <a class="quick-link" href="https://www.upwork.com/nx/search/jobs/" target="_blank" rel="noopener"><span class="link-ico">🌐</span><b>Upwork</b><small>Freelance projects</small></a>
+    <a class="quick-link" href="https://www.fiverr.com/" target="_blank" rel="noopener"><span class="link-ico">🧩</span><b>Fiverr</b><small>Offer your services</small></a>
+    <a class="quick-link" href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener"><span class="link-ico">💼</span><b>LinkedIn Jobs</b><small>Remote & local roles</small></a>
+    <a class="quick-link" href="https://www.jobberman.com/" target="_blank" rel="noopener"><span class="link-ico">🇳🇬</span><b>Jobberman</b><small>Jobs in Nigeria</small></a>
+    <a class="quick-link" href="https://www.freelancer.com/jobs/" target="_blank" rel="noopener"><span class="link-ico">⚡</span><b>Freelancer</b><small>Client projects</small></a>
+    <a class="quick-link" href="https://remoteok.com/" target="_blank" rel="noopener"><span class="link-ico">🏡</span><b>Remote OK</b><small>Remote opportunities</small></a>
+  </div></div>
+  <div class="callout warning"><span>🛡️</span><div><b>Protect your money and identity</b>Never pay to “unlock” a job, never share OTPs or banking passwords, and verify a client before doing unpaid work. Money Robot does not promise income or guaranteed job offers.</div></div>
+</section>
+
+<section class="view" id="view-opportunities">
+  <div class="page-head"><div><div class="eyebrow">OPPORTUNITY FINDER</div><h1>Find work that fits.</h1><p>Search real job boards, then score a job description against your saved skills. Example matches are estimates—not guarantees.</p></div></div>
+  <div class="card">
+    <div class="section-title"><h2>Build your job search</h2><span>Uses external job boards</span></div>
+    <div class="form-grid">
+      <div class="field"><label for="jobKeywords">Job title or keywords</label><input id="jobKeywords" placeholder="e.g. virtual assistant, data entry"></div>
+      <div class="field"><label for="jobType">Work style</label><select id="jobType"><option>Remote</option><option>Hybrid</option><option>On-site</option><option>Freelance</option><option>Part-time</option><option>Full-time</option></select></div>
+      <div class="field"><label for="jobLocation">Location</label><input id="jobLocation" placeholder="e.g. Nigeria, worldwide"></div>
+      <div class="field"><label for="jobBoard">Open search on</label><select id="jobBoard"><option value="google">Google Jobs search</option><option value="upwork">Upwork</option><option value="linkedin">LinkedIn Jobs</option><option value="jobberman">Jobberman Nigeria</option><option value="freelancer">Freelancer</option><option value="remoteok">Remote OK</option></select></div>
+      <div class="field full"><button class="btn primary" id="searchJobs">Search opportunities ↗</button></div>
+    </div>
+    <p class="smalltext muted">Search results open on the chosen website. Money Robot does not scrape private job-board data or apply without your approval.</p>
+  </div>
+  <div class="grid split" style="margin-top:16px">
+    <div class="card"><div class="section-title"><h2>AI-style match score</h2><span>Skills-based estimate</span></div><div class="field"><label for="matchDescription">Paste a job description</label><textarea id="matchDescription" placeholder="Paste the job title, responsibilities and required skills here…"></textarea></div><div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:12px"><button class="btn primary" id="scoreJob">Score my match</button><button class="btn" id="saveMatchedJob">Track this job</button></div><div id="matchResult" class="result hidden"></div></div>
+    <div class="card"><div class="section-title"><h2>Your match profile</h2><span>From My work profile</span></div><div id="skillChips" class="chips"><span class="chip">Add your skills in Profile</span></div><p class="smalltext muted" style="margin-top:15px">The score checks overlap between your skills and the text you paste. It is not a hiring prediction and does not connect to a live AI model.</p><button class="btn small" data-go="profile">Update profile →</button></div>
+  </div>
+</section>
+
+<section class="view" id="view-proposal">
+  <div class="page-head"><div><div class="eyebrow">PROPOSAL STUDIO</div><h1>Pitch yourself professionally.</h1><p>Create a tailored first draft, edit it to reflect your real experience, and copy it before applying.</p></div></div>
+  <div class="grid split">
+    <div class="card"><div class="section-title"><h2>Proposal details</h2><span>Be truthful and specific</span></div>
+      <div class="form-grid">
+        <div class="field"><label for="clientName">Client / company</label><input id="clientName" placeholder="Company or client's name"></div>
+        <div class="field"><label for="roleName">Role / project</label><input id="roleName" placeholder="e.g. Virtual Assistant"></div>
+        <div class="field full"><label for="jobNeeds">What do they need?</label><textarea id="jobNeeds" placeholder="Paste the key requirements or project brief…"></textarea></div>
+        <div class="field full"><label for="proposalProof">Your relevant experience / proof</label><textarea id="proposalProof" placeholder="Only include skills, examples and experience you actually have…"></textarea></div>
+        <div class="field"><label for="proposalTone">Tone</label><select id="proposalTone"><option>Professional and warm</option><option>Confident and concise</option><option>Friendly and conversational</option></select></div>
+        <div class="field"><label for="proposalCta">Call to action</label><select id="proposalCta"><option>Ask for a short discussion</option><option>Offer a small work sample</option><option>Ask about next steps</option></select></div>
+        <div class="field full"><button class="btn primary" id="generateProposal">✦ Generate tailored draft</button></div>
+      </div>
+    </div>
+    <div class="card"><div class="section-title"><h2>Your draft</h2><span class="badge">Editable</span></div><div class="field"><label for="proposalOutput">Review and personalize before sending</label><textarea id="proposalOutput" style="min-height:360px" placeholder="Your tailored proposal will appear here."></textarea></div><div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:12px"><button class="btn primary" id="copyProposal">Copy proposal</button><button class="btn" id="saveProposalApp">Add to tracker</button></div><p class="smalltext muted">This template-based assistant runs on your device. It does not call a hosted AI service. Never invent qualifications, clients or results.</p></div>
+  </div>
+</section>
+
+<section class="view" id="view-applications">
+  <div class="page-head"><div><div class="eyebrow">APPLICATION PIPELINE</div><h1>Keep every lead moving.</h1><p>Track applications, next steps, follow-up dates and outcomes without losing your place.</p></div><button class="btn primary" id="newApplication">＋ Add application</button></div>
+  <div class="card" id="applicationFormCard" style="margin-bottom:16px;display:none"><div class="section-title"><h2>Add an application</h2><button class="btn small" id="cancelApplication">Cancel</button></div><div class="form-grid">
+    <div class="field"><label for="appCompany">Company / client</label><input id="appCompany" placeholder="Company name"></div><div class="field"><label for="appRole">Role / project</label><input id="appRole" placeholder="Job title"></div>
+    <div class="field"><label for="appStatus">Status</label><select id="appStatus"><option>Saved</option><option>Applied</option><option>Interview</option><option>Offer</option><option>Rejected</option><option>Closed</option></select></div><div class="field"><label for="appDate">Follow-up date</label><input id="appDate" type="date"></div>
+    <div class="field full"><label for="appLink">Job link (optional)</label><input id="appLink" type="url" placeholder="https://…"></div><div class="field full"><label for="appNotes">Notes / next action</label><textarea id="appNotes" placeholder="Contact person, interview prep, next step…"></textarea></div>
+    <div class="field full"><button class="btn primary" id="saveApplication">Save application</button></div>
+  </div></div>
+  <div class="card"><div class="toolbar"><input id="appFilter" placeholder="Filter company or role…" aria-label="Filter applications"><select id="statusFilter" aria-label="Filter status"><option value="">All statuses</option><option>Saved</option><option>Applied</option><option>Interview</option><option>Offer</option><option>Rejected</option><option>Closed</option></select></div><div id="applicationsTable"><div class="empty">No applications tracked yet. Save a job you find or add one here.</div></div></div>
+</section>
+
+<section class="view" id="view-tasks">
+  <div class="page-head"><div><div class="eyebrow">DAILY EXECUTION</div><h1>Make progress visible.</h1><p>Break your job search into small actions. Completed tasks stay recorded on this device.</p></div></div>
+  <div class="grid split">
+    <div class="card"><div class="section-title"><h2>Task list</h2><span id="taskCount">0 tasks</span></div><div class="toolbar"><input id="newTaskText" placeholder="Add a task…" aria-label="New task"><button class="btn primary" id="addTask">＋ Add</button></div><div class="task-list" id="taskList"></div></div>
+    <div class="card"><div class="section-title"><h2>Simple weekly routine</h2><span>Suggested</span></div><div class="activity-list">
+      <div class="activity"><div class="activity-ico">🔎</div><div><b>Find 3 suitable openings</b><small>Prioritize fit over sending many random applications.</small></div></div>
+      <div class="activity"><div class="activity-ico">✍️</div><div><b>Tailor each application</b><small>Connect your real skills to the employer's needs.</small></div></div>
+      <div class="activity"><div class="activity-ico">📌</div><div><b>Follow up thoughtfully</b><small>Track dates and keep messages polite.</small></div></div>
+      <div class="activity"><div class="activity-ico">📚</div><div><b>Improve one skill</b><small>Build proof with a small sample or portfolio project.</small></div></div>
+    </div><div class="callout"><span>💡</span><div><b>Consistency beats hype</b>Choose a manageable daily target you can actually sustain.</div></div></div>
+  </div>
+</section>
+
+<section class="view" id="view-money">
+  <div class="page-head"><div><div class="eyebrow">PERSONAL FINANCE LOG</div><h1>Know what you earn.</h1><p>Record real income and expenses in Nigerian naira. This is a tracker, not a bank account.</p></div></div>
+  <div class="grid stats">
+    <div class="card"><div class="stat-top">Income recorded <span class="stat-icon">↗</span></div><div class="stat-value mint" id="moneyIncome">₦0</div><div class="stat-sub">All income entries</div></div>
+    <div class="card"><div class="stat-top">Expenses recorded <span class="stat-icon">↘</span></div><div class="stat-value red-text" id="moneyExpenses">₦0</div><div class="stat-sub">All expense entries</div></div>
+    <div class="card"><div class="stat-top">Net balance <span class="stat-icon">₦</span></div><div class="stat-value" id="moneyNet">₦0</div><div class="stat-sub">Income minus expenses</div></div>
+    <div class="card"><div class="stat-top">Transactions <span class="stat-icon">▤</span></div><div class="stat-value" id="moneyCount">0</div><div class="stat-sub">Entries you added</div></div>
+  </div>
+  <div class="grid split">
+    <div class="card"><div class="section-title"><h2>Add transaction</h2><span>NGN · ₦</span></div><div class="form-grid">
+      <div class="field"><label for="moneyType">Type</label><select id="moneyType"><option value="income">Income</option><option value="expense">Expense</option></select></div>
+      <div class="field"><label for="moneyAmount">Amount (₦)</label><input id="moneyAmount" type="number" min="1" step="0.01" placeholder="e.g. 25000"></div>
+      <div class="field full"><label for="moneyDescription">Description</label><input id="moneyDescription" placeholder="e.g. Logo design payment"></div>
+      <div class="field"><label for="moneyDate">Date</label><input id="moneyDate" type="date"></div>
+      <div class="field"><label for="moneyCategory">Category</label><select id="moneyCategory"><option>Freelance work</option><option>Salary</option><option>Side hustle</option><option>Transport</option><option>Internet / data</option><option>Tools</option><option>Other</option></select></div>
+      <div class="field full"><button class="btn primary" id="addTransaction">＋ Record transaction</button></div>
+    </div></div>
+    <div class="card"><div class="section-title"><h2>Recent transactions</h2><button class="btn small" id="clearTransactions">Clear all</button></div><div id="transactionList" class="activity-list"><div class="empty">No transactions recorded yet.</div></div></div>
+  </div>
+  <div class="card" style="margin-top:16px"><div class="section-title"><h2>Income vs expenses</h2><span>Recent entries by month</span></div><div id="moneyChart" class="bar-chart"></div></div>
+</section>
+
+<section class="view" id="view-profile">
+  <div class="page-head"><div><div class="eyebrow">YOUR PROFESSIONAL PROFILE</div><h1>Tell your story clearly.</h1><p>Save your skills and work preferences to improve match scores and proposal drafts.</p></div></div>
+  <div class="grid split">
+    <div class="card"><div class="section-title"><h2>Profile details</h2><span>Saved locally</span></div><div class="form-grid">
+      <div class="field full"><label for="profileName">Your name</label><input id="profileName" placeholder="Name you use professionally"></div>
+      <div class="field full"><label for="profileHeadline">Professional headline</label><input id="profileHeadline" placeholder="e.g. Entry-level virtual assistant"></div>
+      <div class="field full"><label for="profileSkills">Skills (comma-separated)</label><textarea id="profileSkills" placeholder="e.g. customer service, Canva, writing, Excel, data entry"></textarea></div>
+      <div class="field full"><label for="profileExperience">Experience and proof</label><textarea id="profileExperience" placeholder="Projects, courses, volunteer work, tools you know, measurable results…"></textarea></div>
+      <div class="field"><label for="profileHours">Hours available weekly</label><select id="profileHours"><option>5–10 hours</option><option>10–20 hours</option><option>20–30 hours</option><option>30+ hours</option></select></div>
+      <div class="field"><label for="profileWork">Preferred work</label><select id="profileWork"><option>Remote</option><option>Freelance</option><option>Part-time</option><option>Full-time</option><option>Hybrid</option><option>On-site</option></select></div>
+      <div class="field full"><button class="btn primary" id="saveProfile">Save profile</button> <button class="btn" id="downloadResume">Create profile summary</button></div>
+    </div></div>
+    <div class="card"><div class="section-title"><h2>Professional readiness</h2><span>Self-check</span></div><div id="profileChecklist" class="activity-list"></div><div class="callout"><span>🔐</span><div><b>Your privacy matters</b>Your profile, tasks, applications and finance records are saved in this browser's local storage. Anyone with access to this browser profile may see them. Export a backup regularly; clearing browser data may erase your records.</div></div><div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="exportData">Export backup</button><label class="btn" for="importFile">Import backup</label><input class="hidden" type="file" id="importFile" accept=".json,application/json"><button class="btn danger" id="resetData">Reset all data</button></div></div>
+  </div>
+</section>
+</main>
+</div>
+<footer class="footer"><span>© <span id="year"></span> Money Robot Pro · Work smarter, stay in control.</span><span>Not affiliated with job boards. No earnings or job offers are guaranteed.</span></footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(() => {
+'use strict';
+const KEY='moneyRobotPro.v2';
+const $=id=>document.getElementById(id);
+const today=()=>new Date().toISOString().slice(0,10);
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const defaultState=()=>({profile:{name:'',headline:'',skills:'',experience:'',hours:'5–10 hours',work:'Remote'},tasks:[
+{id:uid(),text:'Set up a professional work profile',done:false,created:today()},
+{id:uid(),text:'Find and save 3 suitable opportunities',done:false,created:today()},
+{id:uid(),text:'Tailor and send 1 strong application',done:false,created:today()},
+{id:uid(),text:'Prepare one portfolio sample',done:false,created:today()},
+{id:uid(),text:'Review and follow up on applications',done:false,created:today()}],applications:[],transactions:[],activity:[]});
+let state;
+try{state={...defaultState(),...JSON.parse(localStorage.getItem(KEY)||'{}')};}catch(e){state=defaultState();}
+state.profile={...defaultState().profile,...(state.profile||{})};
+state.tasks=Array.isArray(state.tasks)?state.tasks:[];
+state.applications=Array.isArray(state.applications)?state.applications:[];
+state.transactions=Array.isArray(state.transactions)?state.transactions:[];
+state.activity=Array.isArray(state.activity)?state.activity:[];
+let currentMatch=null;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){toast('Storage is full. Export a backup and remove old entries.');}}
+function toast(s){const t=$('toast');t.textContent=s;t.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove('show'),2400);}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function money(n){return new Intl.NumberFormat('en-NG',{style:'currency',currency:'NGN',maximumFractionDigits:0}).format(Number(n)||0);}
+function logActivity(title,detail,icon='✦'){state.activity.unshift({id:uid(),title,detail,icon,date:new Date().toLocaleString()});state.activity=state.activity.slice(0,15);}
+function go(view){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id==='view-'+view));document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===view));window.scrollTo({top:0,behavior:'smooth'});if(view==='dashboard')renderDashboard();}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+function renderDashboard(){
+$('statApps').textContent=state.applications.length;
+const done=state.tasks.filter(t=>t.done).length, total=state.tasks.length, pct=total?Math.round(done/total*100):0;
+$('statTasks').textContent=pct+'%';$('taskSub').textContent=done+' of '+total+' tasks complete';
+const inc=state.transactions.filter(t=>t.type==='income').reduce((a,t)=>a+t.amount,0), exp=state.transactions.filter(t=>t.type==='expense').reduce((a,t)=>a+t.amount,0);
+$('statNet').textContent=money(inc-exp);
+const due=state.applications.filter(a=>a.followup&&a.followup<=today()&&!['Rejected','Closed','Offer'].includes(a.status)).length;
+$('statFollow').textContent=due;
+$('weekCount').textContent=done+' of '+total+' complete';$('weekProgress').style.width=pct+'%';
+$('dashboardTasks').innerHTML=state.tasks.slice(0,5).map(t=>`<div class="activity"><div class="activity-ico">${t.done?'✓':'○'}</div><div><b style="${t.done?'text-decoration:line-through;color:#8190a5':''}">${escapeHtml(t.text)}</b><small>${t.done?'Completed':'Suggested next action'}</small></div></div>`).join('')||'<div class="empty">No tasks yet. Add your first action.</div>';
+$('recentActivity').innerHTML=state.activity.slice(0,5).map(a=>`<div class="activity"><div class="activity-ico">${escapeHtml(a.icon)}</div><div><b>${escapeHtml(a.title)}</b><small>${escapeHtml(a.detail)} · ${escapeHtml(a.date)}</small></div></div>`).join('')||'<div class="empty">Your activity will appear here as you use Money Robot.</div>';
+$('welcomeTitle').textContent=state.profile.name?`Let's build your income, ${state.profile.name.split(' ')[0]}.`:"Let's build your income.";
+}
+function renderTasks(){
+$('taskCount').textContent=state.tasks.filter(t=>!t.done).length+' open · '+state.tasks.length+' total';
+$('taskList').innerHTML=state.tasks.map(t=>`<div class="task-row ${t.done?'done':''}"><input type="checkbox" data-task="${t.id}" ${t.done?'checked':''} aria-label="Complete task"><div class="task-text">${escapeHtml(t.text)}<small>Added ${escapeHtml(t.created||'')}</small></div><button data-delete-task="${t.id}" aria-label="Delete task">×</button></div>`).join('')||'<div class="empty">Your task list is clear. Add one action to get started.</div>';
+$('dashboardTasks').innerHTML=state.tasks.slice(0,5).map(t=>`<div class="activity"><div class="activity-ico">${t.done?'✓':'○'}</div><div><b>${escapeHtml(t.text)}</b><small>${t.done?'Completed':'Suggested next action'}</small></div></div>`).join('');
+}
+$('addTask').addEventListener('click',()=>{const text=$('newTaskText').value.trim();if(!text)return toast('Enter a task first.');state.tasks.unshift({id:uid(),text,done:false,created:today()});$('newTaskText').value='';logActivity('Task added',text,'✓');save();renderTasks();renderDashboard();toast('Task added.');});
+$('newTaskText').addEventListener('keydown',e=>{if(e.key==='Enter')$('addTask').click();});
+$('taskList').addEventListener('change',e=>{if(e.target.matches('[data-task]')){const t=state.tasks.find(x=>x.id===e.target.dataset.task);if(t){t.done=e.target.checked;logActivity(t.done?'Task completed':'Task reopened',t.text,'✓');save();renderTasks();renderDashboard();}}});
+$('taskList').addEventListener('click',e=>{const b=e.target.closest('[data-delete-task]');if(b){state.tasks=state.tasks.filter(t=>t.id!==b.dataset.deleteTask);save();renderTasks();renderDashboard();toast('Task removed.');}});
+function getSkills(){return (state.profile.skills||'').split(',').map(s=>s.trim().toLowerCase()).filter(Boolean);}
+function renderSkills(){$('skillChips').innerHTML=getSkills().map(s=>`<span class="chip">${escapeHtml(s)}</span>`).join('')||'<span class="chip">Add your skills in Profile</span>';}
+$('searchJobs').addEventListener('click',()=>{
+const kw=$('jobKeywords').value.trim()||state.profile.headline||'entry level remote jobs', loc=$('jobLocation').value.trim()||'Nigeria', typ=$('jobType').value, board=$('jobBoard').value;
+let url='';
+if(board==='upwork')url='https://www.upwork.com/nx/search/jobs/?q='+encodeURIComponent(kw);
+else if(board==='linkedin')url='https://www.linkedin.com/jobs/search/?keywords='+encodeURIComponent(kw)+'&location='+encodeURIComponent(loc);
+else if(board==='jobberman')url='https://www.jobberman.com/jobs?q='+encodeURIComponent(kw);
+else if(board==='freelancer')url='https://www.freelancer.com/jobs/?keyword='+encodeURIComponent(kw);
+else if(board==='remoteok')url='https://remoteok.com/remote-'+encodeURIComponent(kw.toLowerCase().replace(/\s+/g,'-'))+'-jobs';
+else url='https://www.google.com/search?q='+encodeURIComponent(kw+' '+typ+' jobs '+loc);
+logActivity('Job search opened',kw+' · '+board,'⌕');save();renderDashboard();window.open(url,'_blank','noopener');toast('Opening job search…');
+});
+$('scoreJob').addEventListener('click',()=>{
+const desc=$('matchDescription').value.trim();if(desc.length<15)return toast('Paste a job description first.');
+const skills=getSkills(), text=desc.toLowerCase();
+const hits=skills.filter(s=>text.includes(s));
+const base=skills.length?Math.round(hits.length/skills.length*100):0;
+const titleMatch=state.profile.headline&&text.includes(state.profile.headline.toLowerCase())?10:0;
+const score=Math.min(100,Math.round(base*.9+titleMatch));
+currentMatch={desc,score,hits,kw:desc.split(/\s+/).slice(0,8).join(' ')};
+$('matchResult').classList.remove('hidden');
+$('matchResult').innerHTML=`<div class="eyebrow">SKILLS OVERLAP ESTIMATE</div><div style="font-size:38px;font-weight:850;letter-spacing:-1px;margin:6px 0" class="${score>=60?'mint':score>=30?'gold':'red-text'}">${score}%</div><div class="progress"><span style="width:${score}%"></span></div><p>${skills.length?'Matched '+hits.length+' of '+skills.length+' listed skills.':'Add your skills to your profile for a useful estimate.'}</p><div class="chips">${hits.map(h=>`<span class="chip good">${escapeHtml(h)}</span>`).join('')||'<span class="chip">No listed skills matched</span>'}</div><p>Use this as a checklist, not a prediction of whether you will be hired. Review the full requirements yourself.</p>`;
+logActivity('Job match scored',score+'% estimated skills overlap','✦');save();renderDashboard();
+});
+$('saveMatchedJob').addEventListener('click',()=>{if(!currentMatch)return toast('Score a job description first.');$('appCompany').value='Company not specified';$('appRole').value=$('jobKeywords').value.trim()||currentMatch.kw;$('appNotes').value='Skills overlap estimate: '+currentMatch.score+'%. Job description pasted into match tool; review requirements.';$('appStatus').value='Saved';$('appDate').value='';$('appLink').value='';$('applicationFormCard').style.display='block';go('applications');});
+function generateProposal(){
+const p=state.profile, client=$('clientName').value.trim()||'Hiring team', role=$('roleName').value.trim()||'the role', needs=$('jobNeeds').value.trim(), proof=$('proposalProof').value.trim()||p.experience.trim(), tone=$('proposalTone').value, cta=$('proposalCta').value;
+const first=tone==='Confident and concise'?'Hello '+client+',':tone==='Friendly and conversational'?'Hi '+client+',':'Hello '+client+',';
+const name=p.name.trim()||'[Your name]';
+const skillText=getSkills().slice(0,6).join(', ');
+let body=`${first}\n\nI’m interested in your ${role} opportunity. `;
+if(needs)body+=`From your description, I understand you need support with: ${needs.slice(0,500)}${needs.length>500?'…':''}\n\n`;
+body+=`I can bring a careful, reliable approach to this work${skillText?' using skills such as '+skillText:''}.`;
+if(proof)body+=`\n\nRelevant experience and proof:\n${proof}`;
+else body+=`\n\nI’m ready to learn your workflow, communicate clearly, and agree on deliverables and deadlines before starting.`;
+body+=`\n\n${cta==='Offer a small work sample'?'If useful, I can discuss a small, clearly scoped sample so we can confirm the approach before moving forward.':cta==='Ask about next steps'?'Could you share the next steps and the main priority you would like the successful person to handle first?':'Would you be available for a short discussion about your priorities, timeline, and what success looks like?'}`;
+body+=`\n\nThank you for considering my application. I’d be glad to discuss how I can help.\n\nBest regards,\n${name}`;
+$('proposalOutput').value=body;logActivity('Proposal draft created',role,'✦');save();renderDashboard();toast('Draft created—review it before sending.');
+}
+$('generateProposal').addEventListener('click',generateProposal);
+$('copyProposal').addEventListener('click',async()=>{const text=$('proposalOutput').value;if(!text.trim())return toast('Generate or write a proposal first.');try{await navigator.clipboard.writeText(text);toast('Proposal copied.');}catch(e){$('proposalOutput').select();toast('Select the text and choose Copy.');}});
+$('saveProposalApp').addEventListener('click',()=>{if(!$('proposalOutput').value.trim())return toast('Create a proposal draft first.');$('appCompany').value=$('clientName').value.trim()||'Company not specified';$('appRole').value=$('roleName').value.trim()||'Role not specified';$('appNotes').value='Proposal drafted. Review and send manually.';$('appStatus').value='Saved';$('applicationFormCard').style.display='block';go('applications');});
+$('newApplication').addEventListener('click',()=>{$('applicationFormCard').style.display='block';$('appDate').value=today();$('applicationFormCard').scrollIntoView({behavior:'smooth'});});
+$('cancelApplication').addEventListener('click',()=>$('applicationFormCard').style.display='none');
+$('saveApplication').addEventListener('click',()=>{
+const company=$('appCompany').value.trim(),role=$('appRole').value.trim();if(!company||!role)return toast('Add company/client and role.');
+const link=$('appLink').value.trim();if(link&&!/^https?:\/\//i.test(link))return toast('Enter a valid link starting with http:// or https://.');
+state.applications.unshift({id:uid(),company,role,status:$('appStatus').value,followup:$('appDate').value,link,notes:$('appNotes').value.trim(),created:today()});
+logActivity('Application saved',company+' · '+role,'▤');save();$('applicationFormCard').style.display='none';['appCompany','appRole','appDate','appLink','appNotes'].forEach(id=>$(id).value='');renderApplications();renderDashboard();toast('Application saved.');
+});
+function renderApplications(){
+const q=$('appFilter').value.toLowerCase(), status=$('statusFilter').value;
+const list=state.applications.filter(a=>(!q||(a.company+' '+a.role).toLowerCase().includes(q))&&(!status||a.status===status));
+if(!list.length){$('applicationsTable').innerHTML='<div class="empty">No matching applications. Add one or adjust your filters.</div>';return;}
+$('applicationsTable').innerHTML=`<div class="table-wrap"><table><thead><tr><th>Company / role</th><th>Status</th><th>Follow-up</th><th>Notes</th><th>Actions</th></tr></thead><tbody>${list.map(a=>`<tr><td><b>${escapeHtml(a.company)}</b><br><span class="muted">${escapeHtml(a.role)}</span>${a.link?`<br><a href="${escapeHtml(a.link)}" target="_blank" rel="noopener" style="color:var(--blue)">Open job ↗</a>`:''}</td><td><select data-status-app="${a.id}" aria-label="Application status" style="background:#0c1524;color:var(--text);border:1px solid #30415a;border-radius:8px;padding:6px">${['Saved','Applied','Interview','Offer','Rejected','Closed'].map(s=>`<option ${a.status===s?'selected':''}>${s}</option>`).join('')}</select></td><td>${escapeHtml(a.followup||'—')}${a.followup&&a.followup<=today()&&!['Rejected','Closed','Offer'].includes(a.status)?'<br><span class="gold">Due</span>':''}</td><td>${escapeHtml(a.notes||'—')}</td><td><button class="btn small danger" data-delete-app="${a.id}">Delete</button></td></tr>`).join('')}</tbody></table></div>`;
+}
+$('applicationsTable').addEventListener('change',e=>{const id=e.target.dataset.statusApp;if(id){const a=state.applications.find(x=>x.id===id);if(a){a.status=e.target.value;logActivity('Application updated',a.company+' · '+a.status,'▤');save();renderApplications();renderDashboard();}}});
+$('applicationsTable').addEventListener('click',e=>{const b=e.target.closest('[data-delete-app]');if(b){state.applications=state.applications.filter(a=>a.id!==b.dataset.deleteApp);save();renderApplications();renderDashboard();toast('Application deleted.');}});
+$('appFilter').addEventListener('input',renderApplications);$('statusFilter').addEventListener('change',renderApplications);
+$('addTransaction').addEventListener('click',()=>{const amount=Number($('moneyAmount').value),desc=$('moneyDescription').value.trim();if(!Number.isFinite(amount)||amount<=0||!desc)return toast('Enter a valid amount and description.');state.transactions.unshift({id:uid(),type:$('moneyType').value,amount,desc,date:$('moneyDate').value||today(),category:$('moneyCategory').value});logActivity('Transaction recorded',desc+' · '+money(amount),$('moneyType').value==='income'?'↗':'↘');save();$('moneyAmount').value='';$('moneyDescription').value='';renderMoney();renderDashboard();toast('Transaction recorded.');});
+$('clearTransactions').addEventListener('click',()=>{if(!state.transactions.length)return toast('No transactions to clear.');if(confirm('Delete all recorded transactions? This cannot be undone unless you have a backup.')){state.transactions=[];save();renderMoney();renderDashboard();toast('Transactions cleared.');}});
+function renderMoney(){
+const inc=state.transactions.filter(t=>t.type==='income').reduce((s,t)=>s+t.amount,0),exp=state.transactions.filter(t=>t.type==='expense').reduce((s,t)=>s+t.amount,0);
+$('moneyIncome').textContent=money(inc);$('moneyExpenses').textContent=money(exp);$('moneyNet').textContent=money(inc-exp);$('moneyNet').className='stat-value '+(inc-exp>=0?'mint':'red-text');$('moneyCount').textContent=state.transactions.length;
+$('transactionList').innerHTML=state.transactions.slice(0,8).map(t=>`<div class="activity"><div class="activity-ico">${t.type==='income'?'↗':'↘'}</div><div><b>${escapeHtml(t.desc)}</b><small>${escapeHtml(t.category)} · ${escapeHtml(t.date)}</small></div><strong class="${t.type==='income'?'mint':'red-text'}" style="font-size:12px;white-space:nowrap">${t.type==='income'?'+':'−'}${money(t.amount)}</strong><button data-delete-tx="${t.id}" aria-label="Delete transaction" style="background:none;border:0;color:#9badc2">×</button></div>`).join('')||'<div class="empty">No transactions recorded yet.</div>';
+const months=[];const now=new Date();for(let i=5;i>=0;i--){const d=new Date(now.getFullYear(),now.getMonth()-i,1);const key=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');months.push({key,label:d.toLocaleString('en',{month:'short'}),inc:0,exp:0});}
+state.transactions.forEach(t=>{const m=months.find(x=>x.key===(t.date||'').slice(0,7));if(m)m[t.type==='income'?'inc':'exp']+=t.amount;});
+const max=Math.max(1,...months.flatMap(m=>[m.inc,m.exp]));
+$('moneyChart').innerHTML=months.map(m=>`<div class="bar-wrap"><span>${m.inc?money(m.inc).replace('NGN','₦'):''}</span><div style="display:flex;align-items:end;gap:3px;height:100%;width:100%;justify-content:center"><div class="bar" title="Income ${money(m.inc)}" style="height:${Math.max(m.inc?3:0,m.inc/max*100)}%;background:linear-gradient(180deg,var(--mint),#2d887d)"></div><div class="bar" title="Expenses ${money(m.exp)}" style="height:${Math.max(m.exp?3:0,m.exp/max*100)}%;background:linear-gradient(180deg,var(--gold),#a87734)"></div></div><small>${m.label}</small></div>`).join('');
+}
+$('transactionList').addEventListener('click',e=>{const b=e.target.closest('[data-delete-tx]');if(b){state.transactions=state.transactions.filter(t=>t.id!==b.dataset.deleteTx);save();renderMoney();renderDashboard();toast('Transaction removed.');}});
+function fillProfile(){const p=state.profile; $('profileName').value=p.name||'';$('profileHeadline').value=p.headline||'';$('profileSkills').value=p.skills||'';$('profileExperience').value=p.experience||'';$('profileHours').value=p.hours||'5–10 hours';$('profileWork').value=p.work||'Remote';renderSkills();renderChecklist();}
+function renderChecklist(){const p=state.profile;const checks=[['Professional name',!!p.name],['Clear headline',!!p.headline],['At least 2 listed skills',getSkills().length>=2],['Experience or proof',!!p.experience],['Application tracking started',state.applications.length>0]];$('profileChecklist').innerHTML=checks.map(([label,ok])=>`<div class="activity"><div class="activity-ico" style="color:${ok?'var(--mint)':'var(--gold)'}">${ok?'✓':'○'}</div><div><b>${label}</b><small>${ok?'Ready':'Add this to strengthen your profile'}</small></div></div>`).join('');}
+$('saveProfile').addEventListener('click',()=>{state.profile={name:$('profileName').value.trim(),headline:$('profileHeadline').value.trim(),skills:$('profileSkills').value,experience:$('profileExperience').value.trim(),hours:$('profileHours').value,work:$('profileWork').value};logActivity('Work profile saved','Profile and skills updated','⚙');save();fillProfile();renderDashboard();toast('Profile saved.');});
+$('downloadResume').addEventListener('click',()=>{const p=state.profile;if(!p.name&&!p.headline&&!p.skills&&!p.experience)return toast('Fill in your profile first.');const txt=[p.name,p.headline,'', 'SKILLS',p.skills,'','EXPERIENCE / PROJECTS',p.experience,'','PREFERENCES',`Work style: ${p.work}`,`Availability: ${p.hours}`].join('\n');downloadBlob(txt,'money-robot-profile.txt','text/plain');toast('Profile summary downloaded.');});
+function exportData(){downloadBlob(JSON.stringify({app:'Money Robot Pro',version:2,exportedAt:new Date().toISOString(),data:state},null,2),'money-robot-backup-'+today()+'.json','application/json');}
+function downloadBlob(content,name,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+$('exportData').addEventListener('click',exportData);$('exportTop').addEventListener('click',exportData);
+$('importFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const parsed=JSON.parse(await f.text()),d=parsed.data||parsed;if(!d.profile||!Array.isArray(d.tasks)||!Array.isArray(d.applications)||!Array.isArray(d.transactions))throw Error('Invalid backup');if(!confirm('Import backup and replace the data currently saved in this browser? Export current data first if you need it.'))return;state={...defaultState(),...d};state.profile={...defaultState().profile,...d.profile};save();renderAll();toast('Backup imported.');}catch(err){toast('That backup file is not valid.');}finally{e.target.value='';}});
+$('resetData').addEventListener('click',()=>{if(confirm('Reset ALL Money Robot data in this browser? Export a backup first if you want to keep it.')){state=defaultState();save();renderAll();toast('Data reset.');}});
+function renderAll(){renderDashboard();renderTasks();renderApplications();renderMoney();fillProfile();}
+$('year').textContent=new Date().getFullYear();$('moneyDate').value=today();$('appDate').value=today();
+renderAll();
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+})();
+</script>
+</body>
+</html>
